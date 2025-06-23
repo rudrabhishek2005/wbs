@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doobots - AI Automation Marketplace</title>
+    <meta name="description" content="Discover, download, and deploy powerful automation tools. Browse our marketplace of AI-powered automations created by the community." />
+    
+    <!-- Prevent external resource loading that causes console noise -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:;
+      connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.pexels.com;
+      img-src 'self' data: blob: https://*.supabase.co https://images.pexels.com;
+      font-src 'self' data:;
+      style-src 'self' 'unsafe-inline';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval';
+    ">
+    
+    <!-- Disable external analytics and tracking -->
+    <script>
+      // Block external analytics and tracking scripts
+      window.addEventListener('error', function(e) {
+        if (e.filename && (
+          e.filename.includes('fast.chameleon.io') ||
+          e.filename.includes('content-all.js') ||
+          e.filename.includes('analytics') ||
+          e.filename.includes('tracking')
+        )) {
+          e.preventDefault();
+          return false;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
